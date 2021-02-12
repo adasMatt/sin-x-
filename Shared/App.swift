@@ -1,6 +1,6 @@
 //
-//  sin_x_App.swift
-//  Shared
+//  App.swift
+//  sin(x)
 //
 //  Created by Matthew Adas on 2/12/21.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct sin_x_App: App {
+struct ___PARENTPACKAGENAME:identifier___App: App {
     
     @StateObject var plotDataModel = PlotDataClass(fromLine: true)
     
