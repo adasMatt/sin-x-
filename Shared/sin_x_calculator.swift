@@ -19,7 +19,7 @@ class Sin_X_Calculator: ObservableObject {
     
     var plotDataModel: PlotDataClass? = nil
     var plotError: Bool = false
-    
+    var sinX = 0.0
     
     
     /// calculate_sin_x
@@ -37,7 +37,7 @@ class Sin_X_Calculator: ObservableObject {
 
     func calculate_sin_x(x: Double) -> Double {
 
-        var sinX = 0.0
+        //var sinX = 0.0
         var xInRange = x
         //var cosX = 0.0
         let firstTerm = x
@@ -73,8 +73,8 @@ class Sin_X_Calculator: ObservableObject {
             plotDataModel!.changingPlotParameters.title = "sin(x) vs n"
             
             // Plot first point of sin
-            let dataPoint: plotDataType = [.X: 0.0, .Y: (1.0)]
-            plotDataModel!.appendData(dataPoint: [dataPoint])
+            //let dataPoint: plotDataType = [.X: 0.0, .Y: (1.0)]
+            //plotDataModel!.appendData(dataPoint: [dataPoint])
         }
         else {
             
@@ -111,7 +111,7 @@ class Sin_X_Calculator: ObservableObject {
             }
             // Plot first point of error
                
-                let dataPoint: plotDataType = [.X: 0.0, .Y: (error)]
+                let dataPoint: plotDataType = [.X: 1.0, .Y: (error)]
                 plotDataModel!.appendData(dataPoint: [dataPoint])
                 
         }
@@ -120,10 +120,6 @@ class Sin_X_Calculator: ObservableObject {
         
         sinX = calculate1DInfiniteSum(function: sinnthTermMultiplier, x: x, minimum: 1, maximum: 100, firstTerm: firstTerm, isPlotError: plotError, errorType: sinErrorCalculator  )
         
-        //return (cosXminusOne)
-
-
-    //sinX = sinXminusOne + 1.0
         print(sinX)
         
         return (sinX)
@@ -166,7 +162,7 @@ func calculate1DInfiniteSum(function: nthTermMultiplierHandler, x: Double, minim
         let dataPoint: plotDataType = [.X: Double(minimum), .Y: (previousTerm)]
         plotData.append(contentsOf: [dataPoint])
             
-        print("n is \(minimum), x is \(x), currentTerm = \(previousTerm + 1.0)")
+        print("n is \(minimum), x is \(x), currentTerm = \(previousTerm)")
             
     }
         
@@ -191,7 +187,7 @@ func calculate1DInfiniteSum(function: nthTermMultiplierHandler, x: Double, minim
             
         if !isPlotError{
                 
-            let dataPoint: plotDataType = [.X: Double(n), .Y: (sum + 1.0)]
+            let dataPoint: plotDataType = [.X: Double(n), .Y: (sum)]
             plotData.append(contentsOf: [dataPoint])
         }
         else{
