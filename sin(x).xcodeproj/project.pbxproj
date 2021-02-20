@@ -51,6 +51,8 @@
 		7F0C1A6425D7040B0085F5E5 /* sin_x_calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C1A6225D7040B0085F5E5 /* sin_x_calculator.swift */; };
 		7F0C1A6525D7040B0085F5E5 /* sin_x_calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C1A6225D7040B0085F5E5 /* sin_x_calculator.swift */; };
 		7F0C1A6625D7040B0085F5E5 /* sin_x_calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C1A6225D7040B0085F5E5 /* sin_x_calculator.swift */; };
+		7F6711BF25E1B0D400538DD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C19CE25D7012B0085F5E5 /* ContentView.swift */; };
+		7F6711C425E1B0D500538DD5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0C19CE25D7012B0085F5E5 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -427,6 +429,7 @@
 				7F0C19E925D7012E0085F5E5 /* Tests_iOS.swift in Sources */,
 				7F0C1A2625D701420085F5E5 /* PlotDataClass.swift in Sources */,
 				7F0C1A6525D7040B0085F5E5 /* sin_x_calculator.swift in Sources */,
+				7F6711BF25E1B0D400538DD5 /* ContentView.swift in Sources */,
 				7F0C1A2A25D701420085F5E5 /* TextExportDocument.swift in Sources */,
 				7F0C1A3625D701420085F5E5 /* TextView.swift in Sources */,
 				7F0C1A1A25D701420085F5E5 /* ChangingPlotParameters.swift in Sources */,
@@ -443,6 +446,7 @@
 				7F0C19F425D7012E0085F5E5 /* Tests_macOS.swift in Sources */,
 				7F0C1A2725D701420085F5E5 /* PlotDataClass.swift in Sources */,
 				7F0C1A6625D7040B0085F5E5 /* sin_x_calculator.swift in Sources */,
+				7F6711C425E1B0D500538DD5 /* ContentView.swift in Sources */,
 				7F0C1A2B25D701420085F5E5 /* TextExportDocument.swift in Sources */,
 				7F0C1A3725D701420085F5E5 /* TextView.swift in Sources */,
 				7F0C1A1B25D701420085F5E5 /* ChangingPlotParameters.swift in Sources */,

@@ -33,19 +33,79 @@ class Tests_macOS: XCTestCase {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
+/* idk do I need testOperators for sin
+     func testOperators() throws {
+             
+             let exponent = 5.2↑2.0
+             
+             XCTAssertEqual(exponent, pow(5.2,2.0), accuracy: 1E-15)
+             
+             let factorial = 5❗️
+             
+             XCTAssertEqual(factorial, (1*2*3*4*5))
+             
+             let factorialDouble = 5.0❗️
+             
+             XCTAssertEqual(factorialDouble, (1.0*2.0*3.0*4.0*5.0), accuracy: 1E-15)
+             
+             let trickyFactorial = Double.pi❗️
+             
+             XCTAssertEqual(trickyFactorial, (7.1880827289760327021), accuracy: 5E-15)
+             
 
+             // Use recording to get started writing UI tests.
+             // Use XCTAssert and related functions to verify your tests produce the correct results.
+         }
+     */
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    func testSineStuff() {
+    func testSine() throws {
+        
+        let plotDataModel = PlotDataClass(fromLine: true)
         
         let sinCalculator = Sin_X_Calculator()
-        //x = pi/2
-        let x = Double.pi / 2.0
-        //the error after 12th term equals 1.0000000000000002
-        _ = sinCalculator.calculate_sin_x(x: x)
         
-        XCTAssertEqual(sinCalculator.sinX, 1.0, accuracy: 1.0E-7, "was not equal to this resolution.")
+        sinCalculator.plotDataModel = plotDataModel
+        
+        //x = pi/2
+        let piOverTwo = Double.pi / 2.0
+        //the error after 12th term equals 1.0000000000000002
+        let sin90 = sinCalculator.calculate_sin_x(x: piOverTwo)
+        
+        XCTAssertEqual(sin90, 1.0, accuracy: 1.0E-10)
+        
+        //x = pi/3
+        let piOverThree = Double.pi / 3.0
+        
+        let sin60 = sinCalculator.calculate_sin_x(x: piOverThree)
+        
+        XCTAssertEqual(sin60, sin(piOverThree), accuracy: 1.0E-10)
+        
+        
     }
-    
+    /*
+         func testCos() throws {
+             
+             let plotDataModel = PlotDataClass(fromLine: true)
+             
+             let cosCalculate = Cos_X_Calculator()
+             
+             cosCalculate.plotDataModel = plotDataModel
+             
+             let cos45 = cosCalculate.calculate_cos_x(x: 45.0*Double.pi/180.0)
+             
+             XCTAssertEqual(cos45, cos(45.0*Double.pi/180.0), accuracy: 5E-15)
+             
+             let cosPlus2Pi = cosCalculate.calculate_cos_x(x: (45.0*Double.pi/180.0)+2.0*Double.pi)
+             
+             XCTAssertEqual(cosPlus2Pi, cos(45.0*Double.pi/180.0), accuracy: 5E-15)
+             
+             let cosMinus2Pi = cosCalculate.calculate_cos_x(x: (45.0*Double.pi/180.0)-2.0*Double.pi)
+             
+             XCTAssertEqual(cosMinus2Pi, cos(45.0*Double.pi/180.0), accuracy: 5E-15)
+             
+             
+     }
+     */
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     func testLaunchPerformance() throws {

@@ -56,10 +56,21 @@ class Sin_X_Calculator: ObservableObject {
             } while xInRange < -Double.pi
         
         }
+        //the cosine version then has this next comment block, but I don't need to subtract 1 to find the sin function terms, so I should do everything within calculate_sin_x instead of making a calculate_sin_xMinus1(x: xInRange) yea?
+        /*
+         cosXminusOne = calculate_cos_xMinus1(x: xInRange) //this line will not exist for sin
+                 
+         cosX = cosXminusOne + 1.0                    //here it will just be sinX = ??
+         
+         print(cosX)
+                 
+         return (cosX)
+         */
         
         
-        //sinX = calculate_sin(x: xInRange)
+        //sinX = calculate_sinxMinusNone(x: xInRange)
         //I don't believe it is beneficial to calculate sinX outside of this function since I don't have to subtract 1 and add it back after the sum
+        //or might I need to plot separately?
         if !plotError  {
             
             //set the Plot Parameters
@@ -111,7 +122,7 @@ class Sin_X_Calculator: ObservableObject {
             }
             // Plot first point of error
                
-                let dataPoint: plotDataType = [.X: 1.0, .Y: (error)]
+            let dataPoint: plotDataType = [.X: 0.0, .Y: 0.0]
                 plotDataModel!.appendData(dataPoint: [dataPoint])
                 
         }

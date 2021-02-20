@@ -13,9 +13,9 @@ typealias plotDataType = [CPTScatterPlotField : Double]
 struct ContentView: View {
     @ObservedObject var plotDataModel = PlotDataClass(fromLine: true)
     @ObservedObject private var sinCalculator = Sin_X_Calculator()
-    @State var xInput: String = "\(Double.pi/2.0)"
+    @State var xInput: String = "\(Double.pi)"
     @State var sinOutput: String = "0.0"
-    @State var computerSin: String = "\(sin(Double.pi/2.0))"
+    @State var computerSin: String = "\(sin(Double.pi))"
     @State var error: String = "0.0"
     @State var isChecked:Bool = false
   
@@ -77,23 +77,16 @@ struct ContentView: View {
                     TextField("Error", text: $error)
                         .padding()
                 }.padding()
-            
-                
+               
             }
-            
             
             HStack{
                 Button("Calculate sin(x)", action: {self.calculateSin_X()} )
                 .padding()
                 
             }
-            
         }
-        
     }
-    
-    
-    
     
     /// calculateSin_X
     /// Function accepts the command to start the calculation from the GUI
@@ -112,11 +105,9 @@ struct ContentView: View {
         //tell the sinCalculator to plot Data or Error
         sinCalculator.plotError = self.isChecked
         
-        
         //Calculate the new plotting data and place in the plotDataModel
         sin_x = sinCalculator.calculate_sin_x(x: x!)
         
-
         print("The sin(\(x!)) = \(sin_x)")
         print("computer calcuates \(actualsin_x)")
         
@@ -138,12 +129,7 @@ struct ContentView: View {
         }
         
         error = "\(errorCalc)"
-        
     }
-    
-
-   
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
