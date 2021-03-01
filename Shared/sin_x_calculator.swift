@@ -4,6 +4,7 @@
 //
 //  Created by Matthew Adas on 2/12/21.
 //
+// "do I not need this here?" I think these blocks that I commented out were interfering with some of the plotting, there was no (0, 0) point previously
 
 import Foundation
 import SwiftUI
@@ -69,8 +70,8 @@ class Sin_X_Calculator: ObservableObject {
         
         
         //sinX = calculate_sinxMinusNone(x: xInRange)
-        //I don't believe it is beneficial to calculate sinX outside of this function since I don't have to subtract 1 and add it back after the sum
-        //or might I need to plot separately?
+        
+        // do I not need this here?
         if !plotError  {
             
             //set the Plot Parameters
@@ -87,6 +88,7 @@ class Sin_X_Calculator: ObservableObject {
             //let dataPoint: plotDataType = [.X: 0.0, .Y: (1.0)]
             //plotDataModel!.appendData(dataPoint: [dataPoint])
         }
+ //
         else {
             
             //set the Plot Parameters
@@ -99,11 +101,13 @@ class Sin_X_Calculator: ObservableObject {
             plotDataModel!.changingPlotParameters.lineColor = .red()
             plotDataModel!.changingPlotParameters.title = "Error sin(x) vs n"
 
-            var error = 0.0
-                
+            //var error = 0.0
+            
+            /* do I not need this here?
             let actualsin_x = sin(x)
             
             //if actualsin_x != 0 then calculate the log of the error
+            
             if(actualsin_x != 0.0){
                 
                 //another thing I don't need for sine
@@ -114,18 +118,21 @@ class Sin_X_Calculator: ObservableObject {
                 if(numerator == 0.0) {numerator = 1.0E-16}
                 
                 //wait what? This was originally the ratio between  1 - cos(x) and cos(x)?
-                error = (log10(abs((numerator)/actualsin_x)))
+                //error = (log10(abs((numerator)/actualsin_x)))
                     
             }
             else {
-                error = 0.0
-            }
-            // Plot first point of error
+                //error = 0.0
+            
+            } */
+            // Plot first point of error, this was in the wrong place, it goes outside the if-else, not just inside the else
                
-            let dataPoint: plotDataType = [.X: 0.0, .Y: 0.0]
-                plotDataModel!.appendData(dataPoint: [dataPoint])
+            //let dataPoint: plotDataType = [.X: 0.0, .Y: 0.0]
+              //  plotDataModel!.appendData(dataPoint: [dataPoint])
                 
         }
+        let dataPoint: plotDataType = [.X: 0.0, .Y: 0.0]
+            plotDataModel!.appendData(dataPoint: [dataPoint])
 
         // Calculate the infinite sum using the function that calculates the multiplier of the nth term in the series.
         
